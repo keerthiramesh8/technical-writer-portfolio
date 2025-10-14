@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Case Study</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #e6eef6;
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #071b2b, #0b1220);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #7dd3fc;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #9aa4b2;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            background-color: #7dd3fc;
+            color: #0b0f19;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #60a5fa;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #7dd3fc;
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background-color: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .hover-card, .card:hover {
+            box-shadow: 0 0 20px rgba(125,211,252,0.6);
+            transform: translateY(-4px);
+            transition: 0.3s;
+        }
+
+        .accordion-btn {
+            background-color: rgba(255,255,255,0.03);
+            border: none;
+            padding: 16px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            color: #7dd3fc;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .accordion-btn.active {
+            background-color: rgba(125,211,252,0.2);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-left: 12px;
+            color: #9aa4b2;
+        }
+
+        .metric {
+            background-color: rgba(125,211,252,0.06);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            color: #bfe9ff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Case Study: Cybersecurity VAPT Engagement - UAE Industry Leader</h1>
+        <p>A detailed assessment of IT infrastructure to strengthen cybersecurity posture for a government-owned UAE industry leader.</p>
+        <a href="#overview" class="btn">View Case Study</a>
+    </header>
+
+    <main class="wrap">
+
+        <section id="overview" class="section">
+            <h2>Overview</h2>
+            <p>This engagement involved a thorough evaluation of IT infrastructure to ensure strong security controls, minimize exposure to cyber threats, and maintain alignment with best practices and regulatory expectations.</p>
+        </section>
+
+        <section id="objectives-scope" class="section grid-2">
+            <div class="card">
+                <h3>Objectives</h3>
+                <p>Perform a comprehensive Vulnerability Assessment and Penetration Testing (VAPT) to identify and address security vulnerabilities, ensuring robust protection ahead of high-profile annual events.</p>
+            </div>
+            <div class="card">
+                <h3>Scope</h3>
+                <p>Includes Internal & External VAPT, Mobile & Web Application PT, Cloud Configuration Review, and Architecture Review. Web Application PT for on-premises apps was also conducted to evaluate security risks.</p>
+            </div>
+        </section>
+
+        <section id="challenges-solutions" class="section grid-2">
+            <div class="card">
+                <h3>Challenges</h3>
+                <ul>
+                    <li>Time Constraints: Testing needed to be completed swiftly before annual events.</li>
+                    <li>Coordination with Multiple Stakeholders: Various teams and vendors required careful coordination.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Solutions</h3>
+                <ul>
+                    <li>Initiated assessments early to maximize time.</li>
+                    <li>Regular stakeholder meetings to streamline pre-requisite gathering.</li>
+                    <li>Advanced tools and methodologies to expedite testing without compromising quality.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="implementation" class="section">
+            <h2>Implementation</h2>
+            <div class="accordion">
+                <button class="accordion-btn">Preparation & Planning</button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Kickoff meetings to outline scope, timelines, deliverables.</li>
+                        <li>Pre-requisites shared and tracked for timely collection.</li>
+                    </ul>
+                </div>
+
+                <button class="accordion-btn">Execution</button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Utilized industry-leading tools for vulnerability assessments and penetration testing.</li>
+                        <li>Continuous collaboration with client team to minimize disruption.</li>
+                    </ul>
+                </div>
+
+                <button class="accordion-btn">Reporting & Follow-up</button>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Detailed reports highlighting vulnerabilities, impacts, and remediation steps.</li>
+                        <li>Follow-up sessions to verify implementation of fixes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="outcomes" class="section grid-3">
+            <div class="metric">Assessments completed on time</div>
+            <div class="metric">Comprehensive actionable reports delivered</div>
+            <div class="metric">Enhanced infrastructure security readiness</div>
+        </section>
+
+        <section id="lessons-learned" class="section grid-2">
+            <div class="card">
+                <h3>Time Management</h3>
+                <p>Early initiation and clear timelines are critical for meeting deadlines under tight schedules.</p>
+            </div>
+            <div class="card">
+                <h3>Stakeholder Coordination</h3>
+                <p>Regular collaboration ensures smooth execution and prompt challenge resolution.</p>
+            </div>
+            <div class="card">
+                <h3>Proactive Planning</h3>
+                <p>Anticipating challenges and preparing mitigations streamlines the process.</p>
+            </div>
+            <div class="card">
+                <h3>Tool Efficiency</h3>
+                <p>Advanced tools improve speed and accuracy, ensuring timely delivery.</p>
+            </div>
+        </section>
+
+        <section id="conclusion" class="section">
+            <h2>Conclusion</h2>
+            <p>The proactive approach ensured successful completion of the VAPT engagement, securing infrastructure ahead of critical events. This demonstrates the importance of a structured and timely cybersecurity strategy in protecting vital industries.</p>
+        </section>
+
+    </main>
+
+    <script>
+        const accBtns = document.querySelectorAll('.accordion-btn');
+        accBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('active');
+                const content = btn.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Visualization and Analysis</title>
+  <style>
+    :root {
+      --bg: #dfeffe;   /* light blue background */
+      --ink: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --card: #f8fafc;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    header { display: grid; gap: .5rem; padding: 1rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+    header h1 { margin: 0; font-size: clamp(1.6rem, 2.5vw, 2.25rem); line-height: 1.2; }
+    header p { margin: 0; color: var(--muted); font-size: .95rem; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin: 1rem 0 1.25rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    }
+    h2 { margin: 0 0 .5rem; font-size: clamp(1.15rem, 2vw, 1.5rem); display: flex; align-items: center; gap: .5rem; }
+    h2 .tag { font-size: .8rem; padding: .15rem .5rem; border-radius: 999px; background: rgba(37,99,235,.08); color: var(--accent); border: 1px solid rgba(37,99,235,.22); }
+    ul { padding-left: 1.25rem; margin: .25rem 0; }
+    .hint { background: rgba(37,99,235,.06); border: 1px dashed rgba(37,99,235,.35); color: var(--muted); border-radius: 12px; padding: .75rem .9rem; margin-top: .5rem; font-size: .95rem; }
+    figure { background: var(--bg); border: 1px dashed var(--border); border-radius: 14px; padding: 1rem; margin: .5rem 0; }
+    figure img { width: 70%; display:block; margin:0 auto; border-radius: 8px; }
+    figcaption { text-align: center; color: var(--muted); font-size: .9rem; margin-top: .5rem; }
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; }
+    .kpi { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: .9rem 1rem; }
+    .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .95rem; text-align: center; }
+    @media print { .hint, .footer { display: none !important; } section { page-break-inside: avoid; } body { background: #fff; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1> Data Visualizationa and Analysis </h1>
+      <p>Interactive Power BI analysis of audience and critic ratings, genre popularity, and director performance.</p>
+    </header>
+
+    <section id="introduction">
+      <h2>1. Introduction <span class="tag">Problem Statement</span></h2>
+      <p>The film industry relies heavily on understanding both audience and critic reception. However, ratings data is often scattered across platforms, making it difficult to analyze trends, compare performance across genres, and evaluate the success of directors. This project combines multiple data points into an interactive dashboard to uncover insights about ratings, popularity, and performance drivers.</p>
+    </section>
+
+    <section id="objectives">
+      <h2>2. Project Objectives</h2>
+      <ul>
+        <li>Compare <strong>audience ratings vs. critic ratings</strong> across movies</li>
+        <li>Study <strong>genre popularity</strong> based on ratings and film counts</li>
+        <li>Rank <strong>top-performing directors</strong> by ratings and box-office success</li>
+        <li>Provide <strong>interactive visual storytelling</strong> for audience insights</li>
+      </ul>
+    </section>
+
+    <section id="tools">
+      <h2>3. Tools &amp; Techniques</h2>
+      <ul>
+        <li><strong>Excel</strong> → Data cleaning & preparation (genres, ratings, director names)</li>
+        <li><strong>Power BI</strong> → Data modeling, visualizations, and dashboard creation</li>
+        <li><strong>DAX</strong> → Measures: Average Audience Rating, Average Critic Rating, Genre Popularity Index, Director Ranking</li>
+      </ul>
+    </section>
+
+    <section id="features">
+      <h2>4. Key Features of the Dashboard</h2>
+      <div class="kpis">
+        <div class="kpi"><strong>KPI Cards</strong><br>Show Average Audience Rating, Average Critic Rating, Top Genre</div>
+        <div class="kpi"><strong>Bar Chart</strong><br>Audience vs. critic ratings by genre</div>
+        <div class="kpi"><strong>Scatter Plot</strong><br>Correlation between critic & audience ratings</div>
+        <div class="kpi"><strong>Ranking Table</strong><br>Top directors by ratings</div>
+      </div>
+      <div class="hint">Design includes interactive filters for genre, release year, and rating type.</div>
+      <figure>
+        <img src="Images/images/movie.png" alt="Dashboard Overview">
+        <figcaption>Figure 1. Dashboard Overview</figcaption>
+      </figure>
+    </section>
+
+    <section id="insights">
+      <h2>5. Data Insights</h2>
+      <ul>
+        <li><strong>Audience vs. Critics</strong> → Action & Comedy rated higher by audiences; Drama & Documentary by critics</li>
+        <li><strong>Genre Popularity</strong> → Action and Comedy dominated volumes; Drama consistently high with critics</li>
+        <li><strong>Director Performance</strong> → Some directors excelled across both audience and critic ratings</li>
+      </ul>
+      <figure>
+        <img src="Images/images/directors.png" alt="Top Directors">
+        <figcaption>Figure 2. Top Directors</figcaption>
+      </figure>
+    </section>
+
+    <section id="impact">
+      <h2>6. Impact / Real-World Value</h2>
+      <ul>
+        <li><strong>Studios</strong> → Align strategies with genres performing well with both groups</li>
+        <li><strong>Directors/Producers</strong> → Benchmark their work against industry averages</li>
+        <li><strong>Streaming Platforms</strong> → Identify genres & directors that attract viewers</li>
+      </ul>
+    </section>
+
+    <section id="learnings">
+      <h2>7. Learnings</h2>
+      <ul>
+        <li>Data preparation in <strong>Power Query</strong></li>
+        <li>Wrangling categorical variables (genres, directors, ratings)</li>
+        <li>Using <strong>DAX</strong> for comparative metrics</li>
+        <li>Designing dashboards for <strong>storytelling</strong></li>
+        <li>Translating raw data into <strong>business insights</strong></li>
+      </ul>
+    </section>
+
+    <section id="conclusion">
+      <h2>8. Conclusion</h2>
+      <p>This project demonstrates how <strong>data analysis + visualization</strong> can generate insights into the film industry. By comparing ratings, studying popularity, and ranking directors, the dashboard offers a clear picture of how audiences and critics perceive movies.</p>
+    </section>
+
+    <div class="footer">
+      <p>© 2025 • Data Visualization and Analysis • </p>
+    </div>
+  </div>
+</body>
+</html>
+
+

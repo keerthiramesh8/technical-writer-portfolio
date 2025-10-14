@@ -1,0 +1,366 @@
+/* ===== GENERAL ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: transparent; /* No full bar */
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: right;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px; /* Small box */
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #ababaa; /* Box color on hover */
+  color: bl;
+}
+
+/* ===== HERO ===== */
+.overlay {
+  position: relative;
+  height: 100vh;
+  background: url('Images/images/work.1.jfif') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.profile-photo {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  z-index: 2;
+}
+.fade-in.delay-1 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll down indicator */
+.scroll-down {
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
+  animation: bounce 1.5s infinite;
+  margin-top: 20px;
+  z-index: 2;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(10px) rotate(45deg); }
+}
+
+/* ===== ABOUT SECTION ===== */
+#about {
+  padding: 80px 20px;
+  background: black;
+  text-align: center; /* Center content */
+}
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ababaa;
+  margin-bottom: 30px;
+}
+
+/* Skills Horizontal List */
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skill {
+  padding: 14px 30px;
+  border-radius: 999px; /* perfect oval shape */
+  background: #1e1e1e; /* dark grey background */
+  color: #f5f5f5; /* off-white text */
+  font-weight: 500;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill:hover {
+  background: #a88171;
+  color: whitesmoke;
+}
+
+/* ===== PROJECTS SECTION ===== */
+#portfolio {
+  padding: 50px 20%;
+  text-align: center;
+}
+
+.worklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px)); /* bigger cards */
+  gap: 100px; /* more gap between cards */
+  justify-content: center; /* centers grid */
+}
+
+.work {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #222; /* fallback color */
+  height: 220px;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Overlay Layer */
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* start fully hidden */
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* hide content until hover */
+  transition: height 0.5s ease;
+  padding: 0 20px;
+}
+
+.work:hover .layer {
+  height: 100%; /* slide up to full height */
+}
+
+.layer h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem; /* slightly smaller */
+  color: white;
+  text-align: center;
+  word-wrap: break-word;   /* force wrapping */
+  max-width: 90%;          /* prevent overflow */
+}
+
+
+.layer a {
+  color: white;
+  background: #a88171;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.layer a:hover {
+  background: #c99c8d;
+}
+
+/* Hover Effects */
+.work:hover img {
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  height: 100%;
+}
+/* ===== CONTACT SECTION ===== */
+#contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#contact .sub-title {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #262626;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  color: white;
+  font-size: 16px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form button {
+  padding: 12px;
+  font-size: 16px;
+  background: #a88171;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #835b4d;
+}
+
+
+#portfolio {
+  background: url('Images/images/grey.jpg') center/cover no-repeat;
+  padding: 50px 20%;
+}
+
+#contact {
+  background: url('Images/contact-bg.jpg') center/cover no-repeat;
+  padding: 60px 20px;
+}
+/* ====== MOBILE VIEW (phones & small screens) ====== */
+@media (max-width: 768px) {
+  /* NAVIGATION */
+  nav ul {
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none; /* hidden by default */
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+
+  nav.active ul {
+    display: flex; /* show when active */
+  }
+
+  /* PROFILE PHOTO & HERO TEXT */
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  /* ABOUT SECTION */
+  .about-text {
+    font-size: 16px;
+  }
+
+  .skills-list {
+    gap: 15px;
+  }
+
+  .skill {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  /* PROJECTS */
+  #portfolio {
+    padding: 40px 10px;
+  }
+
+  .worklist {
+    grid-template-columns: 1fr; /* single column on phone */
+    gap: 30px;
+  }
+
+  /* CONTACT */
+  .contact-form {
+    padding: 0 10px;
+  }
+}

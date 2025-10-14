@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Analyst Project: Student Performance & Attendance Analysis</title>
+  <style>
+    :root {
+      --bg: #dfe8ee;
+      --ink: #111827;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --card: #f8fafc;
+      --border: #e5e7eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0b0f16; --ink:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; --card:#0f172a; --border:#1f2937; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    header { display: grid; gap: .5rem; padding: 1rem 0 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+    header h1 { margin: 0; font-size: clamp(1.6rem, 2.5vw, 2.25rem); line-height: 1.2; }
+    header p { margin: 0; color: var(--muted); font-size: .95rem; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin: 1rem 0 1.25rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    }
+    h2 { margin: 0 0 .5rem; font-size: clamp(1.15rem, 2vw, 1.5rem); display: flex; align-items: center; gap: .5rem; }
+    h2 .tag { font-size: .8rem; padding: .15rem .5rem; border-radius: 999px; background: rgba(37,99,235,.08); color: var(--accent); border: 1px solid rgba(37,99,235,.22); }
+    ul { padding-left: 1.25rem; margin: .25rem 0; }
+    .hint { background: rgba(37,99,235,.06); border: 1px dashed rgba(37,99,235,.35); color: var(--muted); border-radius: 12px; padding: .75rem .9rem; margin-top: .5rem; font-size: .95rem; }
+    figure { background: var(--bg); border: 1px dashed var(--border); border-radius: 14px; padding: 1rem; margin: .5rem 0; }
+    figure .placeholder { height: 220px; display: grid; place-items: center; color: var(--muted); font-size: .95rem; }
+    figcaption { text-align: center; color: var(--muted); font-size: .9rem; margin-top: .5rem; }
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; }
+    .kpi { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: .9rem 1rem; }
+    .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .95rem; text-align: center; }
+    @media print { .hint, .footer { display: none !important; } section { page-break-inside: avoid; } body { background: #fff; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 Data Analyst Project: Student Performance & Attendance Analysis</h1>
+      <p>Professional, problem-solving presentation focused on identifying performance drivers and the impact of attendance.</p>
+    </header>
+
+    <section id="introduction">
+      <h2>1. Introduction <span class="tag">Problem Statement</span></h2>
+      <p>Educational institutions often struggle to <strong>track and improve student performance</strong> due to fragmented data across exams, attendance, and extracurricular activities. The goal of this project was to <strong>combine multiple data points into a single interactive dashboard</strong> to identify key performance drivers and provide actionable insights.</p>
+    </section>
+
+    <section id="objectives">
+      <h2>2. Project Objectives</h2>
+      <ul>
+        <li>Identify <strong>factors influencing student exam performance</strong></li>
+        <li>Measure the <strong>impact of attendance on academic results</strong></li>
+        <li>Provide <strong>interactive tools</strong> for educators to filter by performance/attendance categories</li>
+        <li>Highlight students who need academic support</li>
+      </ul>
+    </section>
+
+    <section id="tools">
+      <h2>3. Tools &amp; Techniques</h2>
+      <ul>
+        <li><strong>Excel</strong> → initial data entry and cleaning</li>
+        <li><strong>SQL</strong> → querying structured datasets and extracting relevant metrics</li>
+        <li><strong>Power BI</strong> → data modeling, visualizations, and interactive dashboard creation</li>
+        <li><strong>DAX</strong> → calculated columns and measures (Average Exam Score, Attendance %, Performance categories)</li>
+      </ul>
+    </section>
+
+    <section id="features">
+      <h2>4. Key Features of the Dashboard</h2>
+      <div class="kpis">
+        <div class="kpi"><strong>KPI Cards</strong><br>Average Exam Score, Average Subject Score, Attendance % with icons and color indicators</div>
+        <div class="kpi"><strong>Scatter Plot</strong><br>Correlation between Attendance % and Exam Scores</div>
+        <div class="kpi"><strong>Category Filters</strong><br>Segmentation by Performance and Attendance levels</div>
+        <div class="kpi"><strong>Data Table</strong><br>Detailed student-level breakdown</div>
+      </div>
+      <div class="hint">Design enhancements: rounded cards, pastel backgrounds, subtle shadows, and icons for clarity.</div>
+     <figure>
+        <img src="images/images/dashboard overview.png" alt="Full dashboard overview"  style="display:block; margin:0 auto; width:70%;">
+        <figcaption>Figure 1. Full dashboard overview</figcaption>
+     </figure>
+
+      <figure>
+        <img src="images/images/KPIs.png" alt="KPI cards close-up" style="display:block; margin:0 auto; width:70%;">
+        <figcaption>Figure 2. KPI cards close-up</figcaption>
+      </figure>
+    </section>
+
+    <section id="insights">
+      <h2>5. Data Insights</h2>
+      <ul>
+        <li><strong>Attendance Correlation</strong> → A strong positive relationship exists between attendance % and exam scores</li>
+        <li><strong>Category Distribution</strong> → Most students fall in “Good” and “Excellent” performance categories</li>
+        <li><strong>Risk Segmentation</strong> → Students with attendance below 60% had a 30–40% lower exam average than their peers</li>
+      </ul>
+    </section>
+
+    <section id="impact">
+      <h2>6. Impact / Real-World Value</h2>
+      <ul>
+        <li><strong>Teachers</strong> → quickly identify students needing academic interventions</li>
+        <li><strong>Administrators</strong> → evaluate the effectiveness of attendance policies</li>
+        <li><strong>Students/Parents</strong> → track performance trends over time</li>
+      </ul>
+    </section>
+
+    <section id="learnings">
+      <h2>7. Learnings (as a Data Analyst)</h2>
+      <ul>
+        <li>Data preparation in <strong>Power Query</strong></li>
+        <li>Building and formatting KPI cards with <strong>DAX measures</strong></li>
+        <li>Designing dashboards with <strong>usability &amp; storytelling</strong> in mind</li>
+        <li>Focusing on <strong>business-relevant insights</strong> rather than visuals alone</li>
+      </ul>
+    </section>
+
+    <section id="conclusion">
+      <h2>8. Conclusion</h2>
+      <p>This project demonstrates how <strong>data analysis + visualization</strong> can drive meaningful insights in education. It highlights the importance of <strong>attendance as a performance driver</strong>, and shows how <strong>interactive dashboards</strong> can support decision-making.</p>
+      <figure>
+        <img src="images/images/dashboard.png" alt="Final Dashboard"  style="display:block; margin:0 auto; width:70%;">
+        <figcaption>Figure 3. Final dashboard</figcaption>
+      </figure>
+    </section>
+
+    <div class="footer">
+      <p>© 2025 • Student Performance &amp; Attendance Analysis • Built for portfolio presentation.</p>
+    </div>
+  </div>
+</body>
+</html>
